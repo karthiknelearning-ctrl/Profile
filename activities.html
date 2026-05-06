@@ -425,12 +425,14 @@ Active participation in academic events, conferences, faculty development progra
 
 <div class="filter-section">
 <div class="filter-bar">
-<button class="filter-btn active"><i class="bi bi-grid"></i> All Activities</button>
-<button class="filter-btn"><i class="bi bi-people"></i> Conferences</button>
-<button class="filter-btn"><i class="bi bi-mortarboard"></i> FDPs / Workshops</button>
-<button class="filter-btn"><i class="bi bi-award"></i> Certifications</button>
-<button class="filter-btn"><i class="bi bi-mic"></i> Resource Person</button>
-<button class="filter-btn"><i class="bi bi-stars"></i> Other Activities</button>
+<button class="filter-btn active" data-filter="all"><i class="bi bi-grid"></i> All Activities</button>
+<button class="filter-btn" data-filter="conference"><i class="bi bi-people"></i> Conferences</button>
+<button class="filter-btn" data-filter="fdp"><i class="bi bi-mortarboard"></i> FDPs / Workshops</button>
+<button class="filter-btn" data-filter="certification"><i class="bi bi-award"></i> Certifications</button>
+<button class="filter-btn" data-filter="resource"><i class="bi bi-mic"></i> Resource Person</button>
+<button class="filter-btn" data-filter="other"><i class="bi bi-stars"></i> Other Activities</button>
+
+
 </div>
 </div>
 </div>
@@ -440,7 +442,7 @@ Active participation in academic events, conferences, faculty development progra
 <div class="container">
 <div class="timeline">
 
-<div class="timeline-item">
+<div class="timeline-item" data-category="conference">
 <div class="timeline-year">2025</div>
 <div class="timeline-icon"><i class="bi bi-file-earmark-text"></i></div>
 
@@ -453,7 +455,7 @@ Active participation in academic events, conferences, faculty development progra
 </div>
 </div>
 
-<div class="timeline-item">
+<div class="timeline-item" data-category="fdp">
 <div class="timeline-year">2025</div>
 <div class="timeline-icon"><i class="bi bi-mortarboard"></i></div>
 
@@ -466,7 +468,7 @@ Active participation in academic events, conferences, faculty development progra
 </div>
 </div>
 
-<div class="timeline-item">
+<div class="timeline-item" data-category="conference">
 <div class="timeline-year">2025</div>
 <div class="timeline-icon"><i class="bi bi-cpu"></i></div>
 
@@ -479,7 +481,7 @@ Active participation in academic events, conferences, faculty development progra
 </div>
 </div>
 
-<div class="timeline-item">
+<div class="timeline-item" data-category="other">
 <div class="timeline-year">2024</div>
 <div class="timeline-icon"><i class="bi bi-graph-up"></i></div>
 
@@ -492,7 +494,7 @@ Active participation in academic events, conferences, faculty development progra
 </div>
 </div>
 
-<div class="timeline-item">
+<div class="timeline-item" data-category="fdp">
 <div class="timeline-year">2024</div>
 <div class="timeline-icon"><i class="bi bi-phone"></i></div>
 
@@ -505,7 +507,7 @@ Active participation in academic events, conferences, faculty development progra
 </div>
 </div>
 
-<div class="timeline-item">
+<div class="timeline-item" data-category="resource">
 <div class="timeline-year">2023</div>
 <div class="timeline-icon"><i class="bi bi-mic"></i></div>
 
@@ -518,7 +520,7 @@ Active participation in academic events, conferences, faculty development progra
 </div>
 </div>
 
-<div class="timeline-item">
+<div class="timeline-item" data-category="certification">
 <div class="timeline-year">2023</div>
 <div class="timeline-icon"><i class="bi bi-award"></i></div>
 
@@ -531,7 +533,7 @@ Active participation in academic events, conferences, faculty development progra
 </div>
 </div>
 
-<div class="timeline-item">
+<div class="timeline-item" data-category="conference">
 <div class="timeline-year">2022</div>
 <div class="timeline-icon"><i class="bi bi-journal-richtext"></i></div>
 
@@ -646,5 +648,40 @@ Coimbatore 14.
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+const filterButtons = document.querySelectorAll('.filter-btn');
+const activityItems = document.querySelectorAll('.timeline-item');
+
+filterButtons.forEach(button => {
+button.addEventListener('click', () => {
+
+filterButtons.forEach(btn => btn.classList.remove('active'));
+button.classList.add('active');
+
+const filter = button.getAttribute('data-filter');
+
+activityItems.forEach(item => {
+const category = item.getAttribute('data-category');
+
+if(filter === 'all' || filter === category){
+item.style.display = 'block';
+item.style.opacity = '0';
+item.style.transform = 'translateY(20px)';
+
+setTimeout(() => {
+item.style.transition = 'all 0.4s ease';
+item.style.opacity = '1';
+item.style.transform = 'translateY(0)';
+},100);
+
+}else{
+item.style.display = 'none';
+}
+});
+
+});
+});
+</script>
 </body>
 </html>
