@@ -12,6 +12,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
+html{
+scroll-behavior:smooth;
+}
+
 :root{
 --navy:#0F172A;
 --blue:#2563EB;
@@ -81,10 +85,15 @@ width:100%;
 }
 
 .hero{
-background:linear-gradient(135deg,#F8FBFF 0%,#EDF4FF 100%);
-padding:120px 0 100px;
+background:
+radial-gradient(circle at top left, rgba(37,99,235,0.10), transparent 35%),
+linear-gradient(135deg,#FAFCFF 0%,#EEF4FF 100%);
+padding:140px 0 120px;
 position:relative;
 overflow:hidden;
+min-height:90vh;
+display:flex;
+align-items:center;
 }
 
 .hero::before{
@@ -118,16 +127,22 @@ margin-bottom:16px;
 }
 
 .hero h1{
-font-size:4.5rem;
+font-size:5rem;
 color:var(--navy);
-margin-bottom:24px;
-line-height:1.1;
+margin-bottom:30px;
+line-height:1.02;
+letter-spacing:-2px;
+font-weight:700;
 }
 
 .hero-text{
-font-size:1.1rem;
-margin-bottom:14px;
+font-size:1.2rem;
+margin-bottom:18px;
 color:#374151;
+font-weight:500;
+display:flex;
+align-items:center;
+gap:14px;
 }
 
 .hero-buttons{
@@ -170,18 +185,21 @@ transform:translateY(-2px);
 }
 
 .hero-visual{
-background:white;
-padding:45px;
-border-radius:32px;
-box-shadow:0 25px 60px rgba(15,23,42,0.10);
+background:rgba(255,255,255,0.88);
+padding:55px;
+border-radius:36px;
+box-shadow:0 30px 80px rgba(15,23,42,0.12);
 position:relative;
 z-index:2;
 text-align:center;
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.5);
 }
 
 .hero-visual i{
-font-size:8rem;
+font-size:10rem;
 color:var(--navy);
+opacity:0.95;
 }
 
 .hero-visual h4{
@@ -197,13 +215,15 @@ z-index:5;
 }
 
 .metric-card{
-background:white;
-padding:30px 20px;
-border-radius:24px;
+background:rgba(255,255,255,0.96);
+padding:34px 20px;
+border-radius:28px;
 text-align:center;
-box-shadow:0 15px 40px rgba(15,23,42,0.08);
+box-shadow:0 20px 45px rgba(15,23,42,0.08);
 height:100%;
-transition:0.3s;
+transition:0.35s;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.6);
 }
 
 .metric-card:hover{
@@ -223,13 +243,15 @@ color:var(--navy);
 }
 
 .section{
-padding:110px 0;
+padding:130px 0;
 }
 
 .section-title{
-font-size:2.7rem;
-margin-bottom:18px;
+font-size:3rem;
+margin-bottom:24px;
 color:var(--navy);
+letter-spacing:-1px;
+position:relative;
 }
 
 .section-subtitle{
@@ -248,12 +270,14 @@ height:100%;
 
 .research-card{
 background:white;
-border-radius:24px;
-padding:28px;
+border-radius:28px;
+padding:34px 24px;
 text-align:center;
-box-shadow:0 10px 30px rgba(15,23,42,0.06);
-transition:0.3s;
+box-shadow:0 15px 35px rgba(15,23,42,0.06);
+transition:0.35s;
 height:100%;
+position:relative;
+overflow:hidden;
 }
 
 .research-card:hover{
@@ -263,7 +287,14 @@ transform:translateY(-8px);
 .research-card i{
 font-size:2rem;
 color:var(--gold);
-margin-bottom:18px;
+margin-bottom:22px;
+width:72px;
+height:72px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(212,175,55,0.10);
 }
 
 .research-card h5{
@@ -342,10 +373,10 @@ background:var(--gold);
 
 .timeline-item{
 position:relative;
-margin-bottom:40px;
+margin-bottom:42px;
 background:white;
-padding:28px;
-border-radius:24px;
+padding:34px;
+border-radius:30px;
 box-shadow:0 10px 30px rgba(15,23,42,0.05);
 }
 
@@ -454,9 +485,9 @@ padding:90px 0;
 <div class="hero-subtitle">Academician</div>
 <h1>Dr. Karthikeyan R</h1>
 
-<p class="hero-text"><strong>Assistant Professor in Commerce</strong></p>
-<p class="hero-text">PSG College of Arts & Science</p>
-<p class="hero-text">Civil Aerodrome Post, Coimbatore 14</p>
+<p class="hero-text"><i class="bi bi-briefcase"></i><strong>Assistant Professor in Commerce</strong></p>
+<p class="hero-text"><i class="bi bi-bank"></i>PSG College of Arts & Science</p>
+<p class="hero-text"><i class="bi bi-geo-alt"></i>Civil Aerodrome Post, Coimbatore 14</p>
 
 <div class="hero-buttons">
 <a href="#" class="btn-main">View CV</a>
