@@ -1,607 +1,759 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Karthikeyan R | Academician</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Karthikeyan R | Academician</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--navy:#0F172A;
+--blue:#2563EB;
+--gold:#D4AF37;
+--light:#F8FAFC;
+--soft:#EEF4FF;
+--text:#111827;
+--muted:#6B7280;
+}
 
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-  <style>
-    :root {
-      --navy: #0F172A;
-      --blue: #1D4ED8;
-      --gold: #D4AF37;
-      --light: #EFF6FF;
-      --text: #111827;
-      --muted: #6B7280;
-      --white: #FFFFFF;
-    }
+body{
+font-family:'Inter',sans-serif;
+background:#ffffff;
+color:var(--text);
+line-height:1.7;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: #fafafa;
-    }
+h1,h2,h3,h4,h5{
+font-family:'Playfair Display',serif;
+}
 
-    h1, h2, h3, h4, h5 {
-      font-family: 'Playfair Display', serif;
-    }
+.navbar{
+background:rgba(15,23,42,0.95);
+backdrop-filter:blur(10px);
+padding:18px 0;
+}
 
-    .navbar {
-      background-color: var(--navy);
-      padding: 18px 0;
-    }
+.navbar-brand{
+font-weight:700;
+font-size:1.9rem;
+color:white !important;
+}
 
-    .navbar-brand {
-      color: white !important;
-      font-size: 2rem;
-      font-weight: 700;
-      font-family: 'Playfair Display', serif;
-    }
+.tagline{
+color:var(--gold);
+font-size:0.9rem;
+font-weight:600;
+margin-top:-8px;
+}
 
-    .tagline {
-      color: var(--gold);
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-top: -8px;
-    }
+.nav-link{
+color:#fff !important;
+margin-left:18px;
+font-weight:500;
+position:relative;
+}
 
-    .nav-link {
-      color: white !important;
-      margin-left: 14px;
-      font-weight: 500;
-    }
+.nav-link::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-4px;
+width:0;
+height:2px;
+background:var(--gold);
+transition:0.3s;
+}
 
-    .nav-link:hover {
-      color: var(--gold) !important;
-    }
+.nav-link:hover::after{
+width:100%;
+}
 
-    .hero {
-      background: white;
-      padding: 90px 0 70px;
-      position: relative;
-      overflow: hidden;
-    }
+.hero{
+background:linear-gradient(135deg,#F8FBFF 0%,#EDF4FF 100%);
+padding:120px 0 100px;
+position:relative;
+overflow:hidden;
+}
 
-    .hero h1 {
-      font-size: 4rem;
-      color: var(--navy);
-      margin-bottom: 25px;
-    }
+.hero::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(37,99,235,0.08);
+border-radius:50%;
+right:-120px;
+top:-150px;
+}
 
-    .hero-info {
-      font-size: 1.2rem;
-      margin-bottom: 18px;
-    }
+.hero::after{
+content:'';
+position:absolute;
+width:350px;
+height:350px;
+background:rgba(212,175,55,0.08);
+border-radius:50%;
+left:-120px;
+bottom:-150px;
+}
 
-    .hero-info i {
-      color: var(--gold);
-      margin-right: 12px;
-    }
+.hero-subtitle{
+color:var(--gold);
+font-weight:700;
+letter-spacing:1px;
+text-transform:uppercase;
+margin-bottom:16px;
+}
 
-    .btn-primary-custom {
-      background-color: var(--navy);
-      border: none;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-weight: 600;
-    }
+.hero h1{
+font-size:4.5rem;
+color:var(--navy);
+margin-bottom:24px;
+line-height:1.1;
+}
 
-    .btn-primary-custom:hover {
-      background-color: #16213e;
-    }
+.hero-text{
+font-size:1.1rem;
+margin-bottom:14px;
+color:#374151;
+}
 
-    .btn-gold {
-      background-color: var(--gold);
-      border: none;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-weight: 600;
-    }
+.hero-buttons{
+margin-top:35px;
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+}
 
-    .btn-gold:hover {
-      background-color: #c89f20;
-      color: white;
-    }
+.btn-main{
+background:var(--navy);
+color:white;
+padding:14px 28px;
+border-radius:14px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
 
-    .building-box {
-      border: 3px solid var(--navy);
-      border-radius: 20px;
-      padding: 30px;
-      background: linear-gradient(145deg, #ffffff, #f7f7f7);
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
+.btn-main:hover{
+background:#1E293B;
+color:white;
+transform:translateY(-2px);
+}
 
-    .building-box i {
-      font-size: 7rem;
-      color: var(--navy);
-    }
+.btn-gold{
+background:var(--gold);
+color:white;
+padding:14px 28px;
+border-radius:14px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
 
-    .metrics {
-      margin-top: -35px;
-      position: relative;
-      z-index: 5;
-    }
+.btn-gold:hover{
+background:#c89f20;
+color:white;
+transform:translateY(-2px);
+}
 
-    .metric-card {
-      background: white;
-      border-radius: 18px;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-      height: 100%;
-    }
+.hero-visual{
+background:white;
+padding:45px;
+border-radius:32px;
+box-shadow:0 25px 60px rgba(15,23,42,0.10);
+position:relative;
+z-index:2;
+text-align:center;
+}
 
-    .metric-card i {
-      font-size: 2rem;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
+.hero-visual i{
+font-size:8rem;
+color:var(--navy);
+}
 
-    .metric-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--navy);
-    }
+.hero-visual h4{
+margin-top:24px;
+font-size:1.8rem;
+color:var(--navy);
+}
 
-    .section {
-      padding: 80px 0;
-    }
+.metric-wrapper{
+margin-top:-60px;
+position:relative;
+z-index:5;
+}
 
-    .section-title {
-      font-size: 2.2rem;
-      color: var(--navy);
-      margin-bottom: 20px;
-    }
+.metric-card{
+background:white;
+padding:30px 20px;
+border-radius:24px;
+text-align:center;
+box-shadow:0 15px 40px rgba(15,23,42,0.08);
+height:100%;
+transition:0.3s;
+}
 
-    .card-custom {
-      background: white;
-      border: none;
-      border-radius: 20px;
-      padding: 30px;
-      height: 100%;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
+.metric-card:hover{
+transform:translateY(-6px);
+}
 
-    .research-item {
-      background: var(--light);
-      padding: 18px;
-      border-radius: 14px;
-      text-align: center;
-      font-weight: 600;
-      height: 100%;
-    }
+.metric-card i{
+font-size:2.2rem;
+color:var(--gold);
+margin-bottom:12px;
+}
 
-    .publication-card {
-      background: white;
-      border-radius: 16px;
-      padding: 25px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.05);
-      height: 100%;
-    }
+.metric-number{
+font-size:2rem;
+font-weight:700;
+color:var(--navy);
+}
 
-    .publication-year {
-      background: var(--navy);
-      color: white;
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      margin-bottom: 15px;
-    }
+.section{
+padding:110px 0;
+}
 
-    .material-table {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
+.section-title{
+font-size:2.7rem;
+margin-bottom:18px;
+color:var(--navy);
+}
 
-    .table thead {
-      background-color: var(--navy);
-      color: white;
-    }
+.section-subtitle{
+color:var(--muted);
+max-width:700px;
+margin-bottom:50px;
+}
 
-    .table td, .table th {
-      padding: 16px;
-      vertical-align: middle;
-    }
+.about-card{
+background:white;
+padding:45px;
+border-radius:30px;
+box-shadow:0 10px 40px rgba(15,23,42,0.05);
+height:100%;
+}
 
-    .footer {
-      background-color: var(--navy);
-      color: white;
-      padding: 50px 0 20px;
-    }
+.research-card{
+background:white;
+border-radius:24px;
+padding:28px;
+text-align:center;
+box-shadow:0 10px 30px rgba(15,23,42,0.06);
+transition:0.3s;
+height:100%;
+}
 
-    .social-links a {
-      color: white;
-      font-size: 1.5rem;
-      margin-right: 18px;
-      transition: 0.3s;
-    }
+.research-card:hover{
+transform:translateY(-8px);
+}
 
-    .social-links a:hover {
-      color: var(--gold);
-    }
+.research-card i{
+font-size:2rem;
+color:var(--gold);
+margin-bottom:18px;
+}
 
-    .footer-small {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      margin-top: 30px;
-      padding-top: 20px;
-      text-align: center;
-      color: #cbd5e1;
-    }
+.research-card h5{
+font-size:1.15rem;
+margin-bottom:0;
+color:var(--navy);
+}
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.6rem;
-      }
+.pub-card{
+background:white;
+border-radius:28px;
+padding:32px;
+box-shadow:0 10px 35px rgba(15,23,42,0.05);
+height:100%;
+transition:0.3s;
+}
 
-      .navbar-brand {
-        font-size: 1.6rem;
-      }
-    }
-  </style>
+.pub-card:hover{
+transform:translateY(-8px);
+}
+
+.pub-badge{
+display:inline-block;
+background:var(--soft);
+color:var(--blue);
+padding:8px 14px;
+border-radius:12px;
+font-size:0.85rem;
+font-weight:600;
+margin-bottom:18px;
+}
+
+.pub-card h5{
+margin-bottom:16px;
+line-height:1.5;
+color:var(--navy);
+}
+
+.material-card{
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 10px 35px rgba(15,23,42,0.05);
+}
+
+.material-table th{
+background:var(--navy);
+color:white;
+padding:18px;
+}
+
+.material-table td{
+padding:18px;
+}
+
+.material-table a{
+text-decoration:none;
+font-weight:600;
+color:var(--blue);
+}
+
+.timeline{
+position:relative;
+padding-left:40px;
+}
+
+.timeline::before{
+content:'';
+position:absolute;
+left:10px;
+top:0;
+width:3px;
+height:100%;
+background:var(--gold);
+}
+
+.timeline-item{
+position:relative;
+margin-bottom:40px;
+background:white;
+padding:28px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(15,23,42,0.05);
+}
+
+.timeline-item::before{
+content:'';
+position:absolute;
+left:-36px;
+top:35px;
+width:18px;
+height:18px;
+background:var(--navy);
+border:4px solid white;
+border-radius:50%;
+}
+
+.timeline-year{
+font-size:0.9rem;
+font-weight:700;
+color:var(--gold);
+margin-bottom:8px;
+}
+
+.footer{
+background:var(--navy);
+padding:80px 0 30px;
+color:white;
+}
+
+.footer h4{
+margin-bottom:24px;
+}
+
+.social-links a{
+width:52px;
+height:52px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,255,255,0.08);
+border-radius:50%;
+color:white;
+font-size:1.3rem;
+margin-right:12px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.social-links a:hover{
+background:var(--gold);
+transform:translateY(-4px);
+}
+
+.footer-bottom{
+margin-top:50px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,0.1);
+text-align:center;
+color:#CBD5E1;
+}
+
+@media(max-width:991px){
+.hero h1{
+font-size:3.2rem;
+}
+
+.hero{
+padding:100px 0 80px;
+}
+
+.section{
+padding:90px 0;
+}
+}
+</style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <div>
-        <a class="navbar-brand" href="#">Dr. Karthikeyan R</a>
-        <div class="tagline">Academician</div>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<div class="container">
+<div>
+<a class="navbar-brand" href="#">Dr. Karthikeyan R</a>
+<div class="tagline">Academician</div>
+</div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
-          <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
-          <li class="nav-item"><a class="nav-link" href="#activities">Activities</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<div class="collapse navbar-collapse justify-content-end" id="navMenu">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+<li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+<li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
+<li class="nav-item"><a class="nav-link" href="#activities">Activities</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-7">
-          <h1>Dr. Karthikeyan R</h1>
+<section class="hero">
+<div class="container">
+<div class="row align-items-center g-5">
+<div class="col-lg-7">
+<div class="hero-subtitle">Academician</div>
+<h1>Dr. Karthikeyan R</h1>
 
-          <div class="hero-info">
-            <i class="bi bi-briefcase"></i>
-            Assistant Professor in Commerce
-          </div>
+<p class="hero-text"><strong>Assistant Professor in Commerce</strong></p>
+<p class="hero-text">PSG College of Arts & Science</p>
+<p class="hero-text">Civil Aerodrome Post, Coimbatore 14</p>
 
-          <div class="hero-info">
-            <i class="bi bi-building"></i>
-            PSG College of Arts & Science
-          </div>
+<div class="hero-buttons">
+<a href="#" class="btn-main">View CV</a>
+<a href="#contact" class="btn-gold">Contact</a>
+</div>
+</div>
 
-          <div class="hero-info">
-            <i class="bi bi-geo-alt"></i>
-            Civil Aerodrome Post, Coimbatore 14
-          </div>
+<div class="col-lg-5">
+<div class="hero-visual">
+<i class="bi bi-bank2"></i>
+<h4>Academic Portfolio</h4>
+<p class="text-muted mt-3 mb-0">
+Teaching • Research • Publications • Academic Activities
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-          <div class="mt-4 d-flex gap-3 flex-wrap">
-            <a href="#" class="btn btn-primary-custom">View CV</a>
-            <a href="#contact" class="btn btn-gold">Contact</a>
-          </div>
-        </div>
+<section class="metric-wrapper">
+<div class="container">
+<div class="row g-4">
+<div class="col-md-6 col-lg-2">
+<div class="metric-card">
+<i class="bi bi-journal-richtext"></i>
+<div class="metric-number">18+</div>
+<div>Publications</div>
+</div>
+</div>
 
-        <div class="col-lg-5">
-          <div class="building-box">
-            <i class="bi bi-bank2"></i>
-            <h4 class="mt-4 text-dark">Academic Portfolio</h4>
-            <p class="text-muted mb-0">
-              Teaching • Research • Publications • Academic Activities
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="col-md-6 col-lg-2">
+<div class="metric-card">
+<i class="bi bi-book"></i>
+<div class="metric-number">5+</div>
+<div>Book Chapters</div>
+</div>
+</div>
 
-  <!-- METRICS -->
-  <section class="metrics">
-    <div class="container">
-      <div class="row g-4">
+<div class="col-md-6 col-lg-2">
+<div class="metric-card">
+<i class="bi bi-mortarboard"></i>
+<div class="metric-number">20+</div>
+<div>FDPs</div>
+</div>
+</div>
 
-        <div class="col-md-4 col-lg-2">
-          <div class="metric-card">
-            <i class="bi bi-journal-text"></i>
-            <div class="metric-number">18+</div>
-            <div>Publications</div>
-          </div>
-        </div>
+<div class="col-md-6 col-lg-2">
+<div class="metric-card">
+<i class="bi bi-mic"></i>
+<div class="metric-number">15+</div>
+<div>Presentations</div>
+</div>
+</div>
 
-        <div class="col-md-4 col-lg-2">
-          <div class="metric-card">
-            <i class="bi bi-mic"></i>
-            <div class="metric-number">15+</div>
-            <div>Presentations</div>
-          </div>
-        </div>
+<div class="col-md-6 col-lg-2">
+<div class="metric-card">
+<i class="bi bi-award"></i>
+<div class="metric-number">7+</div>
+<div>Experience</div>
+</div>
+</div>
 
-        <div class="col-md-4 col-lg-2">
-          <div class="metric-card">
-            <i class="bi bi-mortarboard"></i>
-            <div class="metric-number">20+</div>
-            <div>FDPs</div>
-          </div>
-        </div>
+<div class="col-md-6 col-lg-2">
+<div class="metric-card">
+<i class="bi bi-people"></i>
+<div class="metric-number">5+</div>
+<div>Academic Roles</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="col-md-4 col-lg-2">
-          <div class="metric-card">
-            <i class="bi bi-book"></i>
-            <div class="metric-number">5+</div>
-            <div>Book Chapters</div>
-          </div>
-        </div>
+<section class="section" id="about">
+<div class="container">
+<div class="row g-5 align-items-center">
+<div class="col-lg-6">
+<div class="about-card">
+<h2 class="section-title">About</h2>
+<p>
+I am an Assistant Professor in Commerce with specialization in Finance and Company Law. My academic profile includes research publications, conference presentations, faculty development programmes, workshops, and academic administrative responsibilities.
+</p>
 
-        <div class="col-md-4 col-lg-2">
-          <div class="metric-card">
-            <i class="bi bi-award"></i>
-            <div class="metric-number">7+</div>
-            <div>Years Experience</div>
-          </div>
-        </div>
+<p>
+My research primarily focuses on financial markets, investment analysis, banking, corporate finance, sustainability, and emerging applications of artificial intelligence in finance.
+</p>
+</div>
+</div>
 
-        <div class="col-md-4 col-lg-2">
-          <div class="metric-card">
-            <i class="bi bi-people"></i>
-            <div class="metric-number">5+</div>
-            <div>Academic Roles</div>
-          </div>
-        </div>
+<div class="col-lg-6" id="research">
+<h2 class="section-title">Research Interests</h2>
+<p class="section-subtitle">
+Focused research domains in finance, investment analysis, banking, and technology-driven business transformation.
+</p>
 
-      </div>
-    </div>
-  </section>
+<div class="row g-4">
+<div class="col-md-6">
+<div class="research-card">
+<i class="bi bi-graph-up-arrow"></i>
+<h5>Financial Markets</h5>
+</div>
+</div>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="row g-5">
+<div class="col-md-6">
+<div class="research-card">
+<i class="bi bi-cash-coin"></i>
+<h5>Investment Analysis</h5>
+</div>
+</div>
 
-        <div class="col-lg-6">
-          <div class="card-custom">
-            <h2 class="section-title">About Me</h2>
+<div class="col-md-6">
+<div class="research-card">
+<i class="bi bi-bank"></i>
+<h5>Corporate Finance</h5>
+</div>
+</div>
 
-            <p>
-              I am an Assistant Professor in Commerce with specialization in Finance and Company Law. My academic journey includes active involvement in teaching, research, publications, faculty development programmes, conferences, and academic administration.
-            </p>
+<div class="col-md-6">
+<div class="research-card">
+<i class="bi bi-bar-chart-line"></i>
+<h5>Dividend Policy</h5>
+</div>
+</div>
 
-            <p>
-              My research interests focus on financial markets, investment analysis, corporate finance, banking, sustainability, and emerging applications of artificial intelligence in finance and business.
-            </p>
-          </div>
-        </div>
+<div class="col-md-6">
+<div class="research-card">
+<i class="bi bi-cpu"></i>
+<h5>AI in Finance</h5>
+</div>
+</div>
 
-        <div class="col-lg-6" id="research">
-          <div class="card-custom">
-            <h2 class="section-title">Research Interests</h2>
+<div class="col-md-6">
+<div class="research-card">
+<i class="bi bi-briefcase"></i>
+<h5>Company Law</h5>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-            <div class="row g-3 mt-2">
-              <div class="col-md-6">
-                <div class="research-item">Financial Markets</div>
-              </div>
-              <div class="col-md-6">
-                <div class="research-item">Investment Analysis</div>
-              </div>
-              <div class="col-md-6">
-                <div class="research-item">Corporate Finance</div>
-              </div>
-              <div class="col-md-6">
-                <div class="research-item">Dividend Policy</div>
-              </div>
-              <div class="col-md-6">
-                <div class="research-item">AI in Finance</div>
-              </div>
-              <div class="col-md-6">
-                <div class="research-item">Company Law</div>
-              </div>
-            </div>
-          </div>
-        </div>
+<section class="section" id="publications" style="background:var(--light);">
+<div class="container">
+<h2 class="section-title">Selected Publications</h2>
+<p class="section-subtitle">
+Research publications and scholarly contributions in finance, banking, investment analysis, and sustainability.
+</p>
 
-      </div>
-    </div>
-  </section>
+<div class="row g-4">
+<div class="col-lg-4">
+<div class="pub-card">
+<div class="pub-badge">2025</div>
+<h5>Impact of Macroeconomic Indicators on Nifty Index</h5>
+<p class="text-muted mb-0">EPRA International Journal of Environmental Economics, Commerce and Educational Management.</p>
+</div>
+</div>
 
-  <!-- PUBLICATIONS -->
-  <section class="section bg-white" id="publications">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center mb-5 flex-wrap gap-3">
-        <h2 class="section-title mb-0">Selected Publications</h2>
-        <a href="#" class="text-decoration-none fw-semibold" style="color: var(--gold);">
-          View All Publications →
-        </a>
-      </div>
+<div class="col-lg-4">
+<div class="pub-card">
+<div class="pub-badge">2025</div>
+<h5>Resource Mobilization Through Public Offerings</h5>
+<p class="text-muted mb-0">An Analysis of Indian Banking Sector.</p>
+</div>
+</div>
 
-      <div class="row g-4">
+<div class="col-lg-4">
+<div class="pub-card">
+<div class="pub-badge">2024</div>
+<h5>Significance of Employability Skills in Skill Development</h5>
+<p class="text-muted mb-0">International Journal of Economics and Business Review.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="col-lg-4">
-          <div class="publication-card">
-            <div class="publication-year">2025</div>
-            <h5>Impact of Macroeconomic Indicators on Nifty Index</h5>
-            <p class="text-muted mb-0">
-              EPRA International Journal of Environmental Economics, Commerce and Educational Management.
-            </p>
-          </div>
-        </div>
+<section class="section" id="teaching">
+<div class="container">
+<h2 class="section-title">Teaching & Study Materials</h2>
+<p class="section-subtitle">
+Academic resources and subject-wise learning materials for commerce and finance disciplines.
+</p>
 
-        <div class="col-lg-4">
-          <div class="publication-card">
-            <div class="publication-year">2025</div>
-            <h5>Resource Mobilization Through Public Offerings</h5>
-            <p class="text-muted mb-0">
-              Analysis of Indian Banking Sector.
-            </p>
-          </div>
-        </div>
+<div class="material-card">
+<div class="table-responsive">
+<table class="table material-table align-middle mb-0">
+<thead>
+<tr>
+<th>Subject</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Financial Management</td>
+<td><a href="#">View Material</a></td>
+</tr>
+<tr>
+<td>Investment Management</td>
+<td><a href="#">View Material</a></td>
+</tr>
+<tr>
+<td>Security Analysis</td>
+<td><a href="#">View Material</a></td>
+</tr>
+<tr>
+<td>Research Methodology</td>
+<td><a href="#">View Material</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="col-lg-4">
-          <div class="publication-card">
-            <div class="publication-year">2024</div>
-            <h5>Significance of Employability Skills in Skill Development</h5>
-            <p class="text-muted mb-0">
-              International Journal of Economics and Business Review.
-            </p>
-          </div>
-        </div>
+<section class="section" id="activities" style="background:var(--light);">
+<div class="container">
+<h2 class="section-title">Academic Activities</h2>
+<p class="section-subtitle">
+Faculty development programmes, conferences, workshops, and academic engagements.
+</p>
 
-      </div>
-    </div>
-  </section>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-year">2025</div>
+<h5>Financial Analytics using Spreadsheets</h5>
+<p class="text-muted mb-0">Faculty Development Programme conducted by Kristu Jayanti College, Bengaluru.</p>
+</div>
 
-  <!-- TEACHING -->
-  <section class="section" id="teaching">
-    <div class="container">
-      <h2 class="section-title mb-5">Teaching & Study Materials</h2>
+<div class="timeline-item">
+<div class="timeline-year">2025</div>
+<h5>Investing in AI and Robotics</h5>
+<p class="text-muted mb-0">Conference presentation on sustainable innovations and future of work.</p>
+</div>
 
-      <div class="material-table">
-        <table class="table table-hover align-middle mb-0">
-          <thead>
-            <tr>
-              <th>Subject</th>
-              <th>Access</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Financial Management</td>
-              <td><a href="#" class="text-decoration-none">View Material</a></td>
-            </tr>
-            <tr>
-              <td>Investment Management</td>
-              <td><a href="#" class="text-decoration-none">View Material</a></td>
-            </tr>
-            <tr>
-              <td>Security Analysis</td>
-              <td><a href="#" class="text-decoration-none">View Material</a></td>
-            </tr>
-            <tr>
-              <td>Research Methodology</td>
-              <td><a href="#" class="text-decoration-none">View Material</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+<div class="timeline-item">
+<div class="timeline-year">2024</div>
+<h5>Quantum Economics in Econophysics</h5>
+<p class="text-muted mb-0">National conference presentation on mercantilism and quantum economics.</p>
+</div>
 
-  <!-- ACTIVITIES -->
-  <section class="section bg-white" id="activities">
-    <div class="container">
-      <h2 class="section-title mb-5">Academic Activities</h2>
+<div class="timeline-item">
+<div class="timeline-year">2023</div>
+<h5>Research Methodology Guest Lecture</h5>
+<p class="text-muted mb-0">Resource person session for Department of Commerce, Gobi Arts & Science College.</p>
+</div>
+</div>
+</div>
+</section>
 
-      <div class="row g-4">
+<footer class="footer" id="contact">
+<div class="container">
+<div class="row g-5">
+<div class="col-lg-4">
+<h4>Contact</h4>
+<p>
+<strong>Official Email</strong><br>
+drkarthikeyanr@psgcas.ac.in
+</p>
 
-        <div class="col-lg-6">
-          <div class="card-custom">
-            <h4 class="mb-4">Faculty Development Programmes</h4>
+<p>
+<strong>Personal Email</strong><br>
+karthikeyangkraju@outlook.com
+</p>
+</div>
 
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Financial Analytics using Spreadsheets</li>
-              <li class="list-group-item">Fintech Innovation Technology</li>
-              <li class="list-group-item">Innovative Pedagogies for Effective Teaching</li>
-              <li class="list-group-item">Artificial Intelligence Embedded Business Processes</li>
-            </ul>
-          </div>
-        </div>
+<div class="col-lg-4">
+<h4>Academic Profiles</h4>
+<div class="social-links mt-4">
+<a href="https://www.linkedin.com/in/karthikeyangkraju/" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a href="https://scholar.google.com/citations?user=QntvljQAAAAJ&hl=en" target="_blank"><i class="bi bi-google"></i></a>
+<a href="https://orcid.org/my-orcid?orcid=0000-0002-1593-7205" target="_blank"><i class="bi bi-person-badge"></i></a>
+<a href="https://www.researchgate.net/profile/Karthikeyan-Raju-2?ev=hdr_xprf" target="_blank"><i class="bi bi-journal-bookmark"></i></a>
+<a href="https://www.scopus.com/authid/detail.uri?authorId=59424590600" target="_blank"><i class="bi bi-database"></i></a>
+</div>
+</div>
 
-        <div class="col-lg-6">
-          <div class="card-custom">
-            <h4 class="mb-4">Conference Presentations</h4>
+<div class="col-lg-4">
+<h4>Institution</h4>
+<p>
+PSG College of Arts & Science<br>
+Civil Aerodrome Post,<br>
+Coimbatore 14
+</p>
+</div>
+</div>
 
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Leveraging Gen AI for Predictive Credit Scoring</li>
-              <li class="list-group-item">Investing in AI and Robotics</li>
-              <li class="list-group-item">Quantum Economics in Econophysics</li>
-              <li class="list-group-item">Impact on UPI Payment Method in Banking Sector</li>
-            </ul>
-          </div>
-        </div>
+<div class="footer-bottom">
+© 2026 Dr. Karthikeyan R. All Rights Reserved.
+</div>
+</div>
+</footer>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer" id="contact">
-    <div class="container">
-      <div class="row g-5">
-
-        <div class="col-lg-4">
-          <h4 class="mb-4">Contact</h4>
-
-          <p>
-            <strong>Official Email:</strong><br>
-            drkarthikeyanr@psgcas.ac.in
-          </p>
-
-          <p>
-            <strong>Personal Email:</strong><br>
-            karthikeyangkraju@outlook.com
-          </p>
-        </div>
-
-        <div class="col-lg-4">
-          <h4 class="mb-4">Academic Profiles</h4>
-
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/karthikeyangkraju/" target="_blank"><i class="bi bi-linkedin"></i></a>
-
-            <a href="https://scholar.google.com/citations?user=QntvljQAAAAJ&hl=en" target="_blank"><i class="bi bi-google"></i></a>
-
-            <a href="https://orcid.org/my-orcid?orcid=0000-0002-1593-7205" target="_blank"><i class="bi bi-person-badge"></i></a>
-
-            <a href="https://www.researchgate.net/profile/Karthikeyan-Raju-2?ev=hdr_xprf" target="_blank"><i class="bi bi-journal-bookmark"></i></a>
-
-            <a href="https://www.scopus.com/authid/detail.uri?authorId=59424590600" target="_blank"><i class="bi bi-database"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <h4 class="mb-4">Institution</h4>
-          <p>
-            PSG College of Arts & Science<br>
-            Civil Aerodrome Post,<br>
-            Coimbatore 14
-          </p>
-        </div>
-
-      </div>
-
-      <div class="footer-small">
-        © 2026 Dr. Karthikeyan R. All Rights Reserved.
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
