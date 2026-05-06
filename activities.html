@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic Activities | Dr. Karthikeyan R</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--navy:#061B52;
+--gold:#E59B08;
+--light:#F7F8FC;
+--text:#111827;
+--muted:#6B7280;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#FAFBFD;
+color:var(--text);
+}
+
+h1,h2,h3,h4,h5{
+font-family:'Playfair Display',serif;
+}
+
+.navbar{
+background:linear-gradient(90deg,#03133F,#061B52);
+padding:20px 0;
+}
+
+.navbar-brand{
+font-size:2rem;
+font-weight:700;
+color:white !important;
+}
+
+.nav-link{
+color:white !important;
+margin-left:24px;
+font-weight:500;
+position:relative;
+}
+
+.nav-link.active,
+.nav-link:hover{
+color:#FDBA18 !important;
+}
+
+.nav-link.active::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-10px;
+width:100%;
+height:3px;
+background:#FDBA18;
+}
+
+.hero{
+padding:80px 0 60px;
+background:white;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+left:-150px;
+top:-100px;
+width:350px;
+height:350px;
+background:radial-gradient(circle,rgba(6,27,82,0.05),transparent 70%);
+}
+
+.hero h1{
+font-size:4.4rem;
+color:var(--navy);
+margin-bottom:22px;
+}
+
+.hero p{
+font-size:1.15rem;
+color:#4B5563;
+line-height:1.8;
+max-width:600px;
+}
+
+.hero-building{
+text-align:right;
+}
+
+.hero-building i{
+font-size:24rem;
+color:rgba(6,27,82,0.9);
+}
+
+.title-line{
+width:80px;
+height:5px;
+background:var(--gold);
+border-radius:10px;
+margin-bottom:30px;
+}
+
+.filter-section{
+margin-top:40px;
+}
+
+.filter-bar{
+background:white;
+padding:18px 24px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+display:flex;
+flex-wrap:wrap;
+gap:16px;
+align-items:center;
+}
+
+.filter-btn{
+padding:14px 22px;
+border-radius:14px;
+background:transparent;
+border:none;
+font-weight:600;
+color:#374151;
+transition:0.3s;
+}
+
+.filter-btn.active{
+background:var(--navy);
+color:white;
+}
+
+.filter-btn:hover{
+background:#EEF2FF;
+}
+
+.timeline-section{
+padding:70px 0;
+}
+
+.timeline{
+position:relative;
+padding-left:130px;
+}
+
+.timeline::before{
+content:'';
+position:absolute;
+left:70px;
+top:0;
+width:3px;
+height:100%;
+background:#E5E7EB;
+}
+
+.timeline-item{
+position:relative;
+margin-bottom:42px;
+}
+
+.timeline-year{
+position:absolute;
+left:-130px;
+top:30px;
+background:white;
+width:90px;
+height:74px;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
+font-weight:700;
+color:var(--navy);
+box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
+
+.timeline-icon{
+position:absolute;
+left:-28px;
+top:32px;
+width:64px;
+height:64px;
+border-radius:50%;
+background:var(--gold);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:1.7rem;
+box-shadow:0 10px 20px rgba(229,155,8,0.3);
+z-index:2;
+}
+
+.activity-card{
+background:white;
+padding:34px 38px;
+border-radius:24px;
+margin-left:70px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:0.3s;
+position:relative;
+}
+
+.activity-card:hover{
+transform:translateY(-6px);
+}
+
+.activity-type{
+font-size:0.9rem;
+font-weight:700;
+text-transform:uppercase;
+color:var(--gold);
+margin-bottom:12px;
+}
+
+.activity-card h4{
+font-size:1.9rem;
+line-height:1.5;
+margin-bottom:14px;
+color:var(--navy);
+}
+
+.activity-org{
+font-size:1.08rem;
+color:#374151;
+margin-bottom:14px;
+}
+
+.activity-date{
+color:#6B7280;
+font-weight:500;
+}
+
+.arrow-icon{
+position:absolute;
+right:30px;
+top:50%;
+transform:translateY(-50%);
+font-size:1.6rem;
+color:var(--gold);
+}
+
+.stats-section{
+padding-bottom:80px;
+}
+
+.stats-box{
+background:white;
+border-radius:26px;
+padding:35px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.stat-card{
+text-align:center;
+}
+
+.stat-icon{
+width:82px;
+height:82px;
+margin:auto;
+border-radius:50%;
+background:var(--navy);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.stat-number{
+font-size:2.8rem;
+font-weight:700;
+color:var(--navy);
+}
+
+.footer{
+background:linear-gradient(90deg,#03133F,#061B52);
+padding:40px 0 20px;
+color:white;
+}
+
+.footer-top{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+margin-bottom:30px;
+}
+
+.footer-box{
+display:flex;
+gap:14px;
+align-items:flex-start;
+}
+
+.footer-box i{
+font-size:1.5rem;
+color:#FDBA18;
+}
+
+.social-icons{
+display:flex;
+gap:12px;
+justify-content:flex-end;
+}
+
+.social-icons a{
+width:48px;
+height:48px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+color:white;
+font-weight:700;
+}
+
+.linkedin{background:#0A66C2;}
+.scholar{background:#2563EB;}
+.orcid{background:#84CC16;}
+.rg{background:#10B981;}
+.scopus{background:#F97316;}
+
+.copyright{
+text-align:center;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,0.1);
+color:#D1D5DB;
+}
+
+@media(max-width:991px){
+.hero h1{
+font-size:3rem;
+}
+
+.hero-building{
+display:none;
+}
+
+.timeline{
+padding-left:0;
+}
+
+.timeline::before,
+.timeline-year,
+.timeline-icon{
+display:none;
+}
+
+.activity-card{
+margin-left:0;
+}
+
+.footer-top{
+grid-template-columns:1fr;
+}
+
+.social-icons{
+justify-content:flex-start;
+margin-top:20px;
+}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<a class="navbar-brand" href="#">Academician</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-end" id="navMenu">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+<li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+<li class="nav-item"><a class="nav-link" href="teaching.html">Teaching</a></li>
+<li class="nav-item"><a class="nav-link active" href="activities.html">Activities</a></li>
+<li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<h1>Academic Activities</h1>
+<div class="title-line"></div>
+
+<p>
+Active participation in academic events, conferences, faculty development programmes, workshops, certifications and scholarly contributions.
+</p>
+</div>
+
+<div class="col-lg-5 hero-building">
+<i class="bi bi-bank2"></i>
+</div>
+</div>
+
+<div class="filter-section">
+<div class="filter-bar">
+<button class="filter-btn active"><i class="bi bi-grid"></i> All Activities</button>
+<button class="filter-btn"><i class="bi bi-people"></i> Conferences</button>
+<button class="filter-btn"><i class="bi bi-mortarboard"></i> FDPs / Workshops</button>
+<button class="filter-btn"><i class="bi bi-award"></i> Certifications</button>
+<button class="filter-btn"><i class="bi bi-mic"></i> Resource Person</button>
+<button class="filter-btn"><i class="bi bi-stars"></i> Other Activities</button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="timeline-section">
+<div class="container">
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-year">2025</div>
+<div class="timeline-icon"><i class="bi bi-file-earmark-text"></i></div>
+
+<div class="activity-card">
+<div class="activity-type">Conference</div>
+<h4>Presented a paper on “Leveraging Gen AI for Predictive Credit Scoring”</h4>
+<div class="activity-org">International Conference on Emerging Technologies in Finance and Banking</div>
+<div class="activity-date"><i class="bi bi-calendar-event"></i> March 2025</div>
+<div class="arrow-icon"><i class="bi bi-chevron-right"></i></div>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2025</div>
+<div class="timeline-icon"><i class="bi bi-mortarboard"></i></div>
+
+<div class="activity-card">
+<div class="activity-type">FDP / Workshop</div>
+<h4>Participated in Faculty Development Programme on Financial Analytics using Spreadsheets</h4>
+<div class="activity-org">Kristu Jayanti College, Bengaluru</div>
+<div class="activity-date"><i class="bi bi-calendar-event"></i> February 2025</div>
+<div class="arrow-icon"><i class="bi bi-chevron-right"></i></div>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2025</div>
+<div class="timeline-icon"><i class="bi bi-cpu"></i></div>
+
+<div class="activity-card">
+<div class="activity-type">Conference</div>
+<h4>Presented a paper on “Investing in AI and Robotics”</h4>
+<div class="activity-org">International Conference on Sustainable Innovation and Digital Transformation</div>
+<div class="activity-date"><i class="bi bi-calendar-event"></i> January 2025</div>
+<div class="arrow-icon"><i class="bi bi-chevron-right"></i></div>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2024</div>
+<div class="timeline-icon"><i class="bi bi-graph-up"></i></div>
+
+<div class="activity-card">
+<div class="activity-type">Conference</div>
+<h4>Presented a paper on “Quantum Economics in Econophysics”</h4>
+<div class="activity-org">National Conference on Mercantilism and Quantum Economics</div>
+<div class="activity-date"><i class="bi bi-calendar-event"></i> September 2024</div>
+<div class="arrow-icon"><i class="bi bi-chevron-right"></i></div>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2024</div>
+<div class="timeline-icon"><i class="bi bi-phone"></i></div>
+
+<div class="activity-card">
+<div class="activity-type">Workshop</div>
+<h4>Participated in Workshop on UPI Payment Methods and Digital Banking</h4>
+<div class="activity-org">Department of Commerce and Financial Technology</div>
+<div class="activity-date"><i class="bi bi-calendar-event"></i> July 2024</div>
+<div class="arrow-icon"><i class="bi bi-chevron-right"></i></div>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2023</div>
+<div class="timeline-icon"><i class="bi bi-mic"></i></div>
+
+<div class="activity-card">
+<div class="activity-type">Resource Person</div>
+<h4>Delivered Guest Lecture on Research Methodology</h4>
+<div class="activity-org">Department of Commerce, Gobi Arts & Science College</div>
+<div class="activity-date"><i class="bi bi-calendar-event"></i> November 2023</div>
+<div class="arrow-icon"><i class="bi bi-chevron-right"></i></div>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2023</div>
+<div class="timeline-icon"><i class="bi bi-award"></i></div>
+
+<div class="activity-card">
+<div class="activity-type">Certification</div>
+<h4>Completed NPTEL Certification on Financial Markets</h4>
+<div class="activity-org">NPTEL Online Certification Programme</div>
+<div class="activity-date"><i class="bi bi-calendar-event"></i> April 2023</div>
+<div class="arrow-icon"><i class="bi bi-chevron-right"></i></div>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-year">2022</div>
+<div class="timeline-icon"><i class="bi bi-journal-richtext"></i></div>
+
+<div class="activity-card">
+<div class="activity-type">Conference</div>
+<h4>Presented a paper on “Impact of Macro Events on Stock Returns”</h4>
+<div class="activity-org">International Conference on Business and Economics, Chennai</div>
+<div class="activity-date"><i class="bi bi-calendar-event"></i> December 2022</div>
+<div class="arrow-icon"><i class="bi bi-chevron-right"></i></div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="stats-section">
+<div class="container">
+<div class="stats-box">
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="stat-card">
+<div class="stat-icon"><i class="bi bi-people"></i></div>
+<div class="stat-number">15+</div>
+<div>Conferences Attended</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="stat-card">
+<div class="stat-icon"><i class="bi bi-mortarboard"></i></div>
+<div class="stat-number">20+</div>
+<div>FDPs / Workshops</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="stat-card">
+<div class="stat-icon"><i class="bi bi-mic"></i></div>
+<div class="stat-number">10+</div>
+<div>Resource Invitations</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="stat-card">
+<div class="stat-icon"><i class="bi bi-award"></i></div>
+<div class="stat-number">12+</div>
+<div>Certifications Earned</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-top">
+
+<div class="footer-box">
+<i class="bi bi-envelope"></i>
+<div>
+<strong>Official Email</strong><br>
+drkarthikeyanr@psgcas.ac.in
+</div>
+</div>
+
+<div class="footer-box">
+<i class="bi bi-envelope-paper"></i>
+<div>
+<strong>Personal Email</strong><br>
+karthikeyangkraju@outlook.com
+</div>
+</div>
+
+<div class="footer-box">
+<i class="bi bi-telephone"></i>
+<div>
+<strong>Phone</strong><br>
++91 12345 67890
+</div>
+</div>
+
+<div class="footer-box">
+<i class="bi bi-geo-alt"></i>
+<div>
+<strong>Address</strong><br>
+Civil Aerodrome Post,<br>
+Coimbatore 14.
+</div>
+</div>
+
+</div>
+
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-4">
+<div class="social-icons">
+<a href="https://www.linkedin.com/in/karthikeyangkraju/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+<a href="https://scholar.google.com/citations?user=QntvljQAAAAJ&hl=en" class="scholar">G</a>
+<a href="https://orcid.org/my-orcid?orcid=0000-0002-1593-7205" class="orcid">ID</a>
+<a href="https://www.researchgate.net/profile/Karthikeyan-Raju-2?ev=hdr_xprf" class="rg">R</a>
+<a href="https://www.scopus.com/authid/detail.uri?authorId=59424590600" class="scopus">SC</a>
+</div>
+</div>
+
+<div class="copyright">
+© 2026 Dr. Karthikeyan R. All Rights Reserved.
+</div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
