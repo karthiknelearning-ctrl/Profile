@@ -343,7 +343,7 @@ display:none;
 <h1>Contact</h1>
 <div class="title-line"></div>
 <p>
-For academic collaborations, research discussions, conference participation, publication-related communication or institutional engagement, feel free to connect through the contact details below.
+For academic collaborations, research discussions, publication-related communication or institutional engagement, feel free to connect through the contact details below.
 </p>
 </div>
 
@@ -402,8 +402,8 @@ Civil Aerodrome Post, Coimbatore – 641014
 <div class="contact-content">
 <h5>Academic Areas</h5>
 <p>
-Finance, Banking, Capital Markets,<br>
-Digital Economy & AI in Commerce
+Finance, Capital Markets,<br>
+Digital Economy & AI in Finance
 </p>
 </div>
 </div>
@@ -416,7 +416,13 @@ Digital Economy & AI in Commerce
 <h2 class="section-title">Send a Message</h2>
 <div class="title-line"></div>
 
-<form>
+<form action="https://formsubmit.co/drkarthikeyanr@psgcas.ac.in" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Message from Academic Website">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_autoresponse" value="Thank you for contacting Dr. Karthikeyan R. Your message has been received successfully.">
+<input type="hidden" name="_next" value="https://karthiknelearning-ctrl.github.io/drkarthikeyanr.github.io/contact.html?success=true">
 <div class="row">
 <div class="col-md-6">
 <input type="text" class="form-control" placeholder="Your Name">
@@ -431,7 +437,7 @@ Digital Economy & AI in Commerce
 
 <textarea class="form-control" placeholder="Write your message here..."></textarea>
 
-<button type="submit" class="submit-btn">
+<button type="submit" class="submit-btn" onclick="showLoading()">
 <i class="bi bi-send"></i> Send Message
 </button>
 </form>
@@ -519,7 +525,7 @@ PSG College of Arts & Science (Autonomous), Coimbatore
 <p>Finance</p>
 <p>Capital Markets</p>
 <p>Digital Economy</p>
-<p>AI in Commerce</p>
+<p>AI in Finance</p>
 </div>
 
 <div class="col-lg-2">
@@ -540,5 +546,27 @@ PSG College of Arts & Science (Autonomous), Coimbatore
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function showLoading(){
+const btn = document.querySelector('.submit-btn');
+btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
+btn.disabled = true;
+}
+
+const params = new URLSearchParams(window.location.search);
+if(params.get('success') === 'true'){
+const successBox = document.createElement('div');
+successBox.innerHTML = `
+<div style="position:fixed;top:20px;right:20px;background:#041B54;color:white;padding:18px 24px;border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,0.15);z-index:9999;font-weight:600;">
+<i class="bi bi-check-circle"></i> Message sent successfully.
+</div>`;
+document.body.appendChild(successBox);
+
+setTimeout(()=>{
+successBox.remove();
+},4000);
+}
+</script>
+
 </body>
 </html>
