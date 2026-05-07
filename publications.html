@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Publications | Dr. Karthikeyan R</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--navy:#041B54;
+--gold:#E6A21A;
+--light:#F7F9FC;
+--text:#111827;
+--muted:#6B7280;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#F8FAFC;
+color:var(--text);
+}
+
+h1,h2,h3,h4,h5{
+font-family:'Playfair Display',serif;
+}
+
+.navbar{
+background:linear-gradient(90deg,#02133D,#041B54);
+padding:22px 0;
+}
+
+.navbar-brand{
+font-size:2rem;
+font-weight:700;
+color:white !important;
+}
+
+.nav-link{
+color:white !important;
+margin-left:28px;
+font-weight:500;
+position:relative;
+}
+
+.nav-link.active,
+.nav-link:hover{
+color:#FDBA18 !important;
+}
+
+.nav-link.active::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-12px;
+width:100%;
+height:3px;
+background:#FDBA18;
+}
+
+.hero{
+padding:90px 0 50px;
+background:linear-gradient(135deg,#FFFFFF 0%,#F4F7FF 100%);
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+left:-100px;
+top:-100px;
+width:320px;
+height:320px;
+background:radial-gradient(circle,rgba(4,27,84,0.06),transparent 70%);
+}
+
+.hero h1{
+font-size:4.6rem;
+color:var(--navy);
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.15rem;
+line-height:1.9;
+color:#4B5563;
+max-width:650px;
+}
+
+.title-line{
+width:85px;
+height:5px;
+background:var(--gold);
+border-radius:10px;
+margin-bottom:28px;
+}
+
+.hero-visual{
+text-align:center;
+}
+
+.hero-visual i{
+font-size:21rem;
+color:rgba(4,27,84,0.92);
+}
+
+.metrics-section{
+margin-top:-20px;
+position:relative;
+z-index:10;
+}
+
+.metrics-box{
+background:white;
+padding:28px;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,0.06);
+}
+
+.metric-card{
+text-align:center;
+border-right:1px solid #E5E7EB;
+}
+
+.metric-card:last-child{
+border-right:none;
+}
+
+.metric-icon{
+width:72px;
+height:72px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto auto 18px;
+font-size:1.7rem;
+background:var(--navy);
+color:white;
+}
+
+.metric-gold{
+background:var(--gold);
+}
+
+.metric-number{
+font-size:2.5rem;
+font-weight:700;
+color:var(--navy);
+}
+
+.metric-label{
+font-size:0.95rem;
+color:#6B7280;
+}
+
+.filters{
+padding:45px 0 20px;
+}
+
+.filter-bar{
+background:white;
+padding:18px 22px;
+border-radius:22px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+display:flex;
+flex-wrap:wrap;
+gap:16px;
+}
+
+.filter-btn{
+padding:14px 22px;
+border:none;
+border-radius:14px;
+background:transparent;
+font-weight:600;
+transition:0.3s;
+}
+
+.filter-btn.active{
+background:var(--navy);
+color:white;
+}
+
+.publications-section{
+padding:30px 0 90px;
+}
+
+.publication-card{
+background:white;
+padding:30px;
+border-radius:24px;
+box-shadow:0 10px 28px rgba(0,0,0,0.05);
+height:100%;
+transition:0.35s;
+position:relative;
+}
+
+.publication-card:hover{
+transform:translateY(-6px);
+}
+
+.pub-badge{
+display:inline-block;
+padding:7px 14px;
+border-radius:30px;
+font-size:0.78rem;
+font-weight:700;
+margin-bottom:18px;
+}
+
+.badge-ugc{
+background:#DCFCE7;
+color:#166534;
+}
+
+.badge-scopus{
+background:#DBEAFE;
+color:#1D4ED8;
+}
+
+.badge-book{
+background:#FEF3C7;
+color:#92400E;
+}
+
+.publication-card h4{
+font-size:1.8rem;
+line-height:1.45;
+margin-bottom:14px;
+color:var(--navy);
+}
+
+.pub-authors{
+font-weight:600;
+margin-bottom:10px;
+}
+
+.pub-journal{
+color:#374151;
+line-height:1.7;
+margin-bottom:18px;
+}
+
+.pub-meta{
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:#6B7280;
+font-size:0.95rem;
+}
+
+.featured-section{
+padding-bottom:90px;
+}
+
+.featured-card{
+background:white;
+padding:30px;
+border-radius:26px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+height:100%;
+}
+
+.featured-card img{
+width:100%;
+border-radius:16px;
+margin-bottom:22px;
+}
+
+.featured-card h4{
+font-size:1.7rem;
+line-height:1.5;
+color:var(--navy);
+margin-bottom:16px;
+}
+
+.domain-section{
+padding-bottom:80px;
+}
+
+.domain-box{
+background:white;
+padding:30px;
+border-radius:26px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.domain-pill{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:14px 22px;
+border-radius:40px;
+background:#F8FAFC;
+margin:10px;
+font-weight:600;
+}
+
+.domain-pill i{
+color:var(--gold);
+}
+
+.footer{
+background:linear-gradient(90deg,#02133D,#041B54);
+padding:55px 0 20px;
+color:white;
+}
+
+.footer-title{
+font-size:2rem;
+font-weight:700;
+margin-bottom:14px;
+}
+
+.footer p{
+color:#E5E7EB;
+line-height:1.8;
+}
+
+.footer-links a{
+display:block;
+text-decoration:none;
+color:#E5E7EB;
+margin-bottom:10px;
+}
+
+.social-icons{
+display:flex;
+gap:12px;
+margin-top:18px;
+}
+
+.social-icons a{
+width:48px;
+height:48px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+color:white;
+font-weight:700;
+}
+
+.linkedin{background:#0A66C2;}
+.scholar{background:#2563EB;}
+.rg{background:#10B981;}
+
+.copyright{
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,0.1);
+text-align:center;
+color:#D1D5DB;
+}
+
+@media(max-width:991px){
+.hero h1{
+font-size:3rem;
+}
+
+.hero-visual{
+display:none;
+}
+
+.metric-card{
+border-right:none;
+border-bottom:1px solid #E5E7EB;
+padding-bottom:20px;
+margin-bottom:20px;
+}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<a class="navbar-brand" href="#">Academician</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-end" id="navMenu">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link active" href="publications.html">Publications</a></li>
+<li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+<li class="nav-item"><a class="nav-link" href="teaching.html">Teaching</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<h1>Research Publications</h1>
+<div class="title-line"></div>
+<p>
+A comprehensive list of research publications including journal articles, book chapters, edited volumes and scholarly contributions in finance, banking, investment analysis and business research.
+</p>
+</div>
+
+<div class="col-lg-5 hero-visual">
+<i class="bi bi-journal-richtext"></i>
+</div>
+</div>
+</div>
+</section>
+
+<section class="metrics-section">
+<div class="container">
+<div class="metrics-box">
+<div class="row g-4">
+
+<div class="col-lg col-md-4">
+<div class="metric-card">
+<div class="metric-icon"><i class="bi bi-file-earmark-text"></i></div>
+<div class="metric-number">18+</div>
+<div class="metric-label">Journal Articles</div>
+</div>
+</div>
+
+<div class="col-lg col-md-4">
+<div class="metric-card">
+<div class="metric-icon metric-gold"><i class="bi bi-book"></i></div>
+<div class="metric-number">5+</div>
+<div class="metric-label">Book Chapters</div>
+</div>
+</div>
+
+<div class="col-lg col-md-4">
+<div class="metric-card">
+<div class="metric-icon"><i class="bi bi-layers"></i></div>
+<div class="metric-number">1</div>
+<div class="metric-label">Scopus Indexed</div>
+</div>
+</div>
+
+<div class="col-lg col-md-4">
+<div class="metric-card">
+<div class="metric-icon metric-gold"><i class="bi bi-journal-bookmark"></i></div>
+<div class="metric-number">1</div>
+<div class="metric-label">Books Published</div>
+</div>
+</div>
+
+<div class="col-lg col-md-4">
+<div class="metric-card">
+<div class="metric-icon"><i class="bi bi-award"></i></div>
+<div class="metric-number">Multiple</div>
+<div class="metric-label">UGC Care Publications</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<section class="filters">
+<div class="container">
+<div class="filter-bar">
+<button class="filter-btn active">All</button>
+<button class="filter-btn">Journal Articles</button>
+<button class="filter-btn">UGC Care</button>
+<button class="filter-btn">Scopus Indexed</button>
+<button class="filter-btn">Book Chapters</button>
+<button class="filter-btn">Books</button>
+</div>
+</div>
+</section>
+
+<section class="publications-section">
+<div class="container">
+<div class="row g-4">
+
+<div class="col-lg-6">
+<div class="publication-card">
+<div class="pub-badge badge-ugc">UGC CARE</div>
+<h4>Dividend Payout Dynamics and Market Price Response: Evidence from Indian Oil & Gas PSU Firms</h4>
+<div class="pub-authors">Ms. Swetha S, Dr. Karthikeyan R</div>
+<div class="pub-journal">
+International Journal of Research Publication and Reviews, Vol. 7, Issue 4, pp. 71–75, ISSN: 2582–7421
+</div>
+<div class="pub-meta">
+<span><i class="bi bi-calendar"></i> 2026</span>
+<span><i class="bi bi-journal"></i> Journal Article</span>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="publication-card">
+<div class="pub-badge badge-ugc">UGC CARE</div>
+<h4>Impact of Macroeconomic Indicators on Nifty Index</h4>
+<div class="pub-authors">Ms. Vijayalakshmi S, Dr. Karthikeyan R</div>
+<div class="pub-journal">
+EPRA International Journal of Environmental Economics, Commerce and Educational Management, Vol. 12, Issue 4
+</div>
+<div class="pub-meta">
+<span><i class="bi bi-calendar"></i> 2025</span>
+<span><i class="bi bi-journal"></i> Journal Article</span>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="publication-card">
+<div class="pub-badge badge-scopus">SCOPUS INDEXED</div>
+<h4>A Study on Fintech and Its Impact on Financial Services</h4>
+<div class="pub-authors">Dr. C. Eahambaram, Dr. R. Karthikeyan</div>
+<div class="pub-journal">
+Innovation in the Digital Economy: Opportunities, Challenges and the Road Ahead, Chapter 12, ISBN: 978-81-987769-0-2
+</div>
+<div class="pub-meta">
+<span><i class="bi bi-calendar"></i> 2024</span>
+<span><i class="bi bi-book"></i> Book Chapter</span>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="publication-card">
+<div class="pub-badge badge-ugc">UGC CARE</div>
+<h4>Application of Altman Z-Score Model to Analyse the Financial Performance of Maruti Suzuki India Limited</h4>
+<div class="pub-authors">R. Karthikeyan, V. Abinaya & J. Arun Prasath</div>
+<div class="pub-journal">
+International Journal of Creative Research Thoughts, Vol.10, Issue 7, ISSN: 2320–2882
+</div>
+<div class="pub-meta">
+<span><i class="bi bi-calendar"></i> 2022</span>
+<span><i class="bi bi-journal"></i> Journal Article</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="featured-section">
+<div class="container">
+<div class="row g-4">
+
+<div class="col-lg-4">
+<div class="featured-card">
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop" alt="Book">
+<h4>Emerging Dimensions of Finance and Capital Markets in India</h4>
+<p>
+Authors:<br>
+Dr. C. Eahambaram<br>
+Dr. R. Karthikeyan
+</p>
+<p>Springer Nature Singapore</p>
+</div>
+</div>
+
+<div class="col-lg-4">
+<div class="featured-card">
+<img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop" alt="Chapter">
+<h4>Innovation in the Digital Economy: Opportunities, Challenges and the Road Ahead</h4>
+<p>
+Scopus Indexed Book Chapter publication focusing on fintech and financial services.
+</p>
+</div>
+</div>
+
+<div class="col-lg-4">
+<div class="featured-card text-center d-flex flex-column justify-content-center">
+<div class="metric-icon metric-gold mx-auto mb-4"><i class="bi bi-book"></i></div>
+<h4>Book Chapters</h4>
+<h2 style="font-size:4rem;color:#041B54;">5+</h2>
+<p>Book Chapters Published in Edited Volumes</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="domain-section">
+<div class="container">
+<div class="domain-box">
+<h3 class="mb-4" style="color:#041B54;">Research Domains</h3>
+
+<div class="domain-pill"><i class="bi bi-currency-rupee"></i> Finance</div>
+<div class="domain-pill"><i class="bi bi-bar-chart"></i> Capital Markets</div>
+<div class="domain-pill"><i class="bi bi-bank"></i> Banking</div>
+<div class="domain-pill"><i class="bi bi-cpu"></i> AI in Finance</div>
+<div class="domain-pill"><i class="bi bi-percent"></i> Dividend Policy</div>
+<div class="domain-pill"><i class="bi bi-globe"></i> Digital Economy</div>
+<div class="domain-pill"><i class="bi bi-tree"></i> Sustainability</div>
+
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="row g-5">
+
+<div class="col-lg-4">
+<div class="footer-title">Dr. Karthikeyan R</div>
+<p>
+Department of Commerce<br>
+PSG College of Arts & Science (Autonomous), Coimbatore
+</p>
+</div>
+
+<div class="col-lg-3">
+<h5 class="mb-4">Quick Links</h5>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="publications.html">Publications</a>
+<a href="activities.html">Activities</a>
+<a href="teaching.html">Teaching</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+
+<div class="col-lg-3">
+<h5 class="mb-4">Connect</h5>
+<p>drkarthikeyanr@psgcas.ac.in</p>
+<p>Google Scholar</p>
+<p>ResearchGate</p>
+<p>Scopus ID: 59424590600</p>
+</div>
+
+<div class="col-lg-2">
+<h5 class="mb-4">Stay Connected</h5>
+<div class="social-icons">
+<a href="https://www.linkedin.com/in/karthikeyangkraju/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+<a href="https://scholar.google.com/citations?user=QntvljQAAAAJ&hl=en" class="scholar">G</a>
+<a href="https://www.researchgate.net/profile/Karthikeyan-Raju-2?ev=hdr_xprf" class="rg">R</a>
+</div>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Dr. Karthikeyan R. All Rights Reserved.
+</div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
