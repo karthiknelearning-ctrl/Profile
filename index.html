@@ -67,28 +67,45 @@ NAVBAR
 ======================= */
 
 .navbar{
-background:linear-gradient(90deg,#02133D,#041B54);
+background:#ffffff;
 padding:18px 0;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
+border-bottom:1px solid #e5e7eb;
+box-shadow:none;
 }
 
 .navbar-brand{
+color:#041B54 !important;
 font-weight:700;
 font-size:1.9rem;
-color:white !important;
 }
 
 .nav-link{
-color:white !important;
-margin-left:20px;
-font-weight:500;
-transition:0.3s;
+color:#041B54 !important;
+font-weight:600;
+margin-left:30px;
+position:relative;
+transition:.3s;
 }
 
-.nav-link:hover,
-.nav-link.active{
-color:#FDBA18 !important;
+.nav-link:hover{
+color:#E6A21A !important;
 }
+
+.nav-link.active{
+color:#E6A21A !important;
+}
+
+.nav-link.active::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-12px;
+width:100%;
+height:3px;
+background:#E6A21A;
+border-radius:10px;
+}
+
 
 /* =======================
 HERO
@@ -105,10 +122,18 @@ linear-gradient(
 }
 
 .hero-content h1{
-font-size:4.1rem;
-line-height:1.15;
-color:var(--navy);
+font-size:5rem;
+font-weight:700;
+line-height:1.1;
 margin-bottom:20px;
+}
+
+.hero-content h1 .blue{
+color:#041B54;
+}
+
+.hero-content h1 .gold{
+color:#E6A21A;
 }
 
 .hero-content .designation{
@@ -268,7 +293,7 @@ NAVIGATION
 <div class="container">
 
 <a class="navbar-brand" href="index.html">
-Dr. Karthikeyan R
+Dr. RK
 </a>
 
 <button class="navbar-toggler"
@@ -344,7 +369,8 @@ HERO SECTION
 <div class="hero-content">
 
 <h1>
-Dr. Karthikeyan R
+<span class="blue">Dr. Karthikeyan</span>
+<span class="gold">R</span>
 </h1>
 
 <div class="designation">
@@ -492,7 +518,7 @@ color:var(--muted);
 margin-bottom:20px;
 ">
 
-Dr. Karthikeyan R is an Assistant Professor in the PG & Research Department of Commerce at PSG College of Arts & Science (Autonomous), Coimbatore. His academic journey spans teaching, research, publication and student mentoring.
+Dr. Karthikeyan R is an Assistant Professor in the PG & Research Department of Commerce at PSG College of Arts & Science (Autonomous), Coimbatore. My academic journey spans teaching, research, publication and student mentoring.
 
 </p>
 
@@ -502,7 +528,7 @@ color:var(--muted);
 margin-bottom:30px;
 ">
 
-His work focuses on dividend policy, investment analysis, non-performing assets and economic studies, supported by scholarly publications, academic collaborations and continuous professional development.
+My work focuses on dividend policy, investment analysis, non-performing assets and economic studies, supported by scholarly publications, academic collaborations and continuous professional development.
 
 </p>
 
@@ -532,7 +558,7 @@ Know More
 
 <div class="stat-card">
 <i class="bi bi-building"></i>
-<h3>PSG</h3>
+<h3>PSG CAS</h3>
 <p>Current Institution</p>
 </div>
 
@@ -857,7 +883,7 @@ margin-top:20px;
 color:#E5E7EB;
 ">
 
-Structured subject-wise learning resources, unit materials, academic notes, future flipbooks and digital teaching content designed for postgraduate commerce students.
+Structured subject-wise learning resources, unit materials, academic notes, future flipbooks and digital teaching content designed for commerce students.
 
 </p>
 
@@ -1103,7 +1129,7 @@ Scopus
 </h4>
 
 <p>
-Author ID
+59424590600
 </p>
 
 </div>
@@ -1190,7 +1216,7 @@ margin:auto;
 color:#E5E7EB;
 ">
 
-Open to academic discussions, collaborative research, invited lectures, publication opportunities and scholarly networking.
+Open to Academic Discussions, Collaborative Research and Scholarly Networking.
 
 </p>
 
@@ -1229,7 +1255,7 @@ bottom:30px;
 right:30px;
 width:55px;
 height:55px;
-background:var(--navy);
+background:var(--red);
 color:white;
 border-radius:50%;
 display:flex;
