@@ -420,17 +420,50 @@ Macro & Micro Economics
 
 <form action="https://formsubmit.co/karthiknelearning@gmail.com" method="POST">
 
-<input type="text" name="name" placeholder="Name" required>
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Message from Academic Website">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_autoresponse" value="Thank you for contacting Dr. Karthikeyan R. Your message has been received successfully.">
+<input type="hidden" name="_next" value="https://karthiknelearning-ctrl.github.io/drkarthikeyanr.github.io/contact.html?success=true">
 
-<input type="email" name="email" placeholder="Email" required>
+<div class="row">
 
-<textarea name="message" placeholder="Message" required></textarea>
+<div class="col-md-6">
+<input type="text"
+name="name"
+class="form-control"
+placeholder="Your Name"
+required>
+</div>
 
-<button type="submit">
-Send
+<div class="col-md-6">
+<input type="email"
+name="email"
+class="form-control"
+placeholder="Your Email"
+required>
+</div>
+
+</div>
+
+<input type="text"
+name="subject"
+class="form-control"
+placeholder="Subject"
+required>
+
+<textarea
+name="message"
+class="form-control"
+placeholder="Write your message here..."
+required></textarea>
+
+<button type="submit" class="submit-btn" onclick="showLoading()">
+<i class="bi bi-send"></i> Send Message
 </button>
 
 </form>
+
 </div>
 </div>
 
