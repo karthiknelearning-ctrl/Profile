@@ -458,7 +458,7 @@ class="form-control"
 placeholder="Write your message here..."
 required></textarea>
 
-<button type="submit" class="submit-btn" onclick="showLoading()">
+<button type="submit" class="submit-btn">
 <i class="bi bi-send"></i> Send Message
 </button>
 
@@ -544,10 +544,10 @@ PSG College of Arts & Science (Autonomous), Coimbatore
 
 <div class="col-lg-3">
 <h5 class="mb-4">Research Areas</h5>
-<p>Finance</p>
-<p>Capital Markets</p>
-<p>Digital Economy</p>
-<p>AI in Finance</p>
+<p>Dividend Policy</p>
+<p>Investment Analysis</p>
+<p>Non-Performing Assets (NPAs)</p>
+<p>Micro & Macro Economics</p>
 </div>
 
 <div class="col-lg-2">
@@ -569,11 +569,7 @@ PSG College of Arts & Science (Autonomous), Coimbatore
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-function showLoading(){
-const btn = document.querySelector('.submit-btn');
-btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
-btn.disabled = true;
-}
+
 
 const params = new URLSearchParams(window.location.search);
 if(params.get('success') === 'true'){
